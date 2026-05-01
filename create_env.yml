@@ -1,4 +1,4 @@
-name: loveaudio-env
+name: loveaudio_env
 channels:
   - conda-forge
 
