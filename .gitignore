@@ -1,1 +1,8 @@
 .vscode/settings.json
+# オーディオファイルを拡張子で指定して除外
+*.flac
+*.wav
+*.mp3
+*.m4a
+*.wma
+*.aac
