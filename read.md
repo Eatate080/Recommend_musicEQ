@@ -1,5 +1,7 @@
 未来の俺へ
 仮想環境はMiniconda mambeは現在のネットでは無理だったSSLエラー発生
+また、仮想環境名はloveaudio_env
+
     忘れていた時用手順：
     1．クローン完了
     2．Anaconda promptを開きymlファイルのあるローカルリポジトリまでcd
