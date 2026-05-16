@@ -5,20 +5,6 @@ import sqlite3
 def Data_Analysis(path) :
     try:
         y, sr = librosa.load(path,sr=None)
-            
-    except FileNotFoundError as e:
-        print(f"File is Not Found!!: {e}")
-        return 0
-        
-
-    write_music_name = []
-    write_music_name.append(music_name)
-    with open('music_name.csv', 'a',newline='') as f:
-        writer = csv.writer(f)
-        writer.writerow(write_music_name)
-
-    with open('music_name.csv', newline="") as f:
-        print(f.read())
 
         print(len(y))
         print(sr)
@@ -52,3 +38,12 @@ def Data_Analysis(path) :
 
 
         return 0
+            
+    except FileNotFoundError as e:
+        print(f"File is Not Found!!: {e}")
+        return 0
+        
+
+    
+
+        

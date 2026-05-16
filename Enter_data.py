@@ -13,7 +13,8 @@ def Enter_practice_data(path,extension,name):
                         'CREATE TABLE IF NOT EXISTS music_list(id INTEGER PRIMARY KEY AUTOINCREMENT,' \
                         'music_name TEXT,' \
                         'music_extension TEXT,' \
-                        'data BLOB)'
+                        'my_EQ '
+                        'data BLOB,)'
                 )
                 conn.commit()
                 cur.execute('INSERT INTO music_list(music_name) values(?)', (name,))

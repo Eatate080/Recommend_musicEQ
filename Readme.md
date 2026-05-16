@@ -1,3 +1,14 @@
+本プロジェクトはPythonの機械学習ライブラリ(RandomForestRegressor)で音楽ファイルやEQを学習し、新規曲に対してオススメEQ設定を出力するプロジェクトである。
+
+
+
+
+
+
+
+
+
+
 未来の俺へ
 仮想環境はMiniconda mambeは現在のネットでは無理だったSSLエラー発生
 また、仮想環境名はloveaudio_env
