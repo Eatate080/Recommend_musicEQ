@@ -1,7 +1,7 @@
 import librosa
 import numpy as np
 from sklearn.ensemble  import RandomForestRegressor as RFR
-import csv
+import joblib
 
 y, sr = librosa.load("sample.flac",sr=None)
 
@@ -57,7 +57,9 @@ model = RFR()
 model.fit(X,y)
 
 results = model.predict(u)
+joblib.dump(model,"learn-model.joblib")
 print(results)
 print(type(results), results)
 result = np.round(results, 0)
 print(result)
+

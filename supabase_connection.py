@@ -2,7 +2,7 @@ from supabase import create_client, Client
 from dotenv import load_dotenv
 import os
 def save_music_data():
-    load_dotenv("C:\Users\eitom\Documents\love_audio\.env")
+    load_dotenv(r".env")
 
     url: str = os.getenv("SUPABASE_URL")
     key: str = os.getenv("SUPABASE_KEY")
@@ -31,3 +31,4 @@ def save_music_data():
         print(f"エラー{e}")
         print(f"エラーの種類: {type(e)}")
 
+save_music_data()
