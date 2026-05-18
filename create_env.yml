@@ -11,3 +11,4 @@ dependencies:
   - matplotlib=3.8.0
   - scikit-learn=1.2.2
   - setuptools<70.0.0
+  - supabase = 2.30.0
