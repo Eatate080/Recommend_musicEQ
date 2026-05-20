@@ -3,6 +3,7 @@ import numpy as np
 import librosa 
 
 
+
 def AudioAnalyzer(file_path) :
     try:
         y, sr = librosa.load(file_path,sr=None) #yがオーディオの時系列データ(サンプル数,)、srがサンプリングレート(None=自動)
@@ -23,3 +24,4 @@ def AudioAnalyzer(file_path) :
     except FileNotFoundError as e:
         print(f"File is Not Found!!: {e}")
         return 0
+    

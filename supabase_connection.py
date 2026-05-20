@@ -12,7 +12,7 @@ def save_music_data():
         
         supabase: Client = create_client(url, key)
         supabase.auth.sign_in_anonymously()
-        # データを保存する例
+        
         
     except Exception as e:
         
@@ -20,7 +20,7 @@ def save_music_data():
         
     try:
         data = {
-    # 明示的に指定
+    
             "music_name": "test_success",
             "features": [0.1, 0.2, 0.3],
             "my_eq": [1, 2, 3, 4, 5, 6]
