@@ -2,6 +2,7 @@
 from app.moduls.schema import MusicData
 from app.database.connection import connection_server
 import numpy as np
+import sys
 Client= connection_server()
 
 
@@ -22,8 +23,7 @@ def save_data(file_title: str,features:list[float],my_eq:list[int]):
     except Exception as e:
         print(f"エラー{e}")
         print(f"エラーの種類: {type(e)}")
-
-    return 0
+        sys.exit()
     
 def all_read_data():
     
@@ -44,6 +44,5 @@ def all_read_data():
     except Exception as e:
         print(f"エラー{e}")
         print(f"エラーの種類: {type(e)}")
-        return None
+        sys.exit()
     
-all_read_data()

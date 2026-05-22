@@ -12,6 +12,9 @@ def learn_model(result_features,result_myeq):
 
     model.fit(result_features,result_myeq)
     joblib.dump(model,"learn-model.joblib")
+    print("学習が完了し、モデルファイルが生成されました")
+
+    return 0
 
 
     

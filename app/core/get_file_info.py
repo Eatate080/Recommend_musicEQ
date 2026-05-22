@@ -1,4 +1,5 @@
 import os
+import sys
 
 def get_file_info(file_name) :
     
@@ -18,13 +19,13 @@ def get_file_info(file_name) :
             
         else :
             print("拡張子がmp3じゃないです")
-            return 0
+            sys.exit()
 
 
     except FileExistsError as e :
-        print(f"ファイル名が間違えているよ(Not finf file_name){e}\n")
+        print(f"ファイル名が間違えています(Not finf file_title){e}\n")
         print(f"Error Type:{e}\n")
-        return 0
+        sys.exit()
 
 
 
