@@ -1,6 +1,7 @@
 #曲の解析をするモジュール
 import numpy as np
-import librosa 
+import librosa
+import sys
 
 
 
@@ -19,9 +20,9 @@ def AudioAnalyzer(file_path) :
         Reshape = np.array(Future).reshape(1,-1) #[1,384]の二次配列に直す
 
 
-        return Reshape
+        return Reshape.tolist()
             
     except FileNotFoundError as e:
         print(f"File is Not Found!!: {e}")
-        return 0
+        sys.exit()
     

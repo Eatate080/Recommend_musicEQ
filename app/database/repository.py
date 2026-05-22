@@ -9,7 +9,12 @@ Client= connection_server()
 def save_data(file_title: str,features:list[float],my_eq:list[int]):
 
     m_name = file_title
-    extracted_features = features
+        
+    if isinstance(features, np.ndarray):
+        extracted_features = features.tolist()
+    else:
+        extracted_features = features
+        
     setting_eq = my_eq
     try:
         data: MusicData = {

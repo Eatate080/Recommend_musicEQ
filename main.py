@@ -22,6 +22,8 @@ def main():
             print("エラー: 半角数字で入力してください。\n")
             continue  
         
+
+        
         if select_number == 1:
             print("\n-- 学習モードに移行します --")
             print("練習に使う音楽ファイル名を入力してください\n")
@@ -67,11 +69,13 @@ def main():
             print("予測結果: ",predictions)
 
 
-        elif select_func == 3:
+
+        elif select_number == 3:
             print("学習モデルを生成します")
             all_features,all_eq = all_read_data()
             learn_model(all_features,all_eq)
             break
+
 
         elif select_number == 0:
             print("システムを終了します。")

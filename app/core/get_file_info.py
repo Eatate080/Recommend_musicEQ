@@ -1,16 +1,19 @@
-import os
+
 import sys
+from pathlib import Path
 
 def get_file_info(file_name) :
     
     print("ファイル情報を取得します")
     
     
-    file_path: str = fr"...\data\{file_name}"
+    current_dir = Path(__file__).parent.parent.parent 
+    file_path: str = str(current_dir / "data" / file_name)
     print(file_path)
     
     try:
-        root, ext = os.path.splitext(file_path)
+        root = Path(file_path).stem
+        ext = Path(file_path).suffix
         if ext == ".flac": #本番環境では.mp3に変更、学習時はOK
 
             eq_data =Enter_EQ()
@@ -57,4 +60,3 @@ def Enter_EQ():
             
 
 
-get_file_info("kuronuri.flac")
