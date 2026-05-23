@@ -8,5 +8,3 @@
 *.aac
 *.env
 
-!data/
-!data/**
