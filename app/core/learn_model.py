@@ -1,6 +1,7 @@
 from sklearn.ensemble  import RandomForestRegressor as RFR
 import joblib
 import numpy as np
+import pathlib 
 
 
 def learn_model(result_features,result_myeq):
@@ -11,10 +12,11 @@ def learn_model(result_features,result_myeq):
 
 
     model.fit(result_features,result_myeq)
-    joblib.dump(model,"learn-model.joblib")
+    file_path: str = str(pathlib.Path("model") / "learn-model.joblib")
+    joblib.dump(model,file_path)
     print("学習が完了し、モデルファイルが生成されました")
 
-    return 0
+    return file_path
 
 
     

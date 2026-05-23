@@ -14,7 +14,7 @@ def get_file_info(file_name) :
     try:
         root = Path(file_path).stem
         ext = Path(file_path).suffix
-        if ext == ".flac": #本番環境では.mp3に変更、学習時はOK
+        if ext == ".mp3": #本番環境では.mp3に変更、学習時はOK
 
             eq_data =Enter_EQ()
 
@@ -60,3 +60,30 @@ def Enter_EQ():
             
 
 
+def test_file_info(file_name) :
+    
+    print("ファイル情報を取得します")
+    
+    
+    current_dir = Path(__file__).parent.parent.parent 
+    file_path: str = str(current_dir / "data" / file_name)
+    print(file_path)
+    
+    try:
+        
+        ext = Path(file_path).suffix
+        if ext == ".mp3": #本番環境では.mp3に変更、学習時はOK
+
+            
+
+            return file_path
+            
+        else :
+            print("拡張子がmp3じゃないです")
+            sys.exit()
+
+
+    except FileExistsError as e :
+        print(f"ファイル名が間違えています(Not finf file_title){e}\n")
+        print(f"Error Type:{e}\n")
+        sys.exit()

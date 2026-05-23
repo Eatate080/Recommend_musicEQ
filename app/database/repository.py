@@ -41,7 +41,7 @@ def all_read_data():
         print(type(all_features))
         print(all_eq)
         
-        npdata_features=np.array(all_features)
+        npdata_features=np.vstack(all_features)
         npdata_myeq=np.array(all_eq)
         print(type(npdata_myeq))
 

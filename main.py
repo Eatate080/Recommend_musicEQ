@@ -1,10 +1,11 @@
 #モジュールを沢山
-from app.core.get_file_info import get_file_info 
+from app.core.get_file_info import get_file_info ,test_file_info
 from app.core.analyzer import AudioAnalyzer
 from app.core.learn_model import learn_model
 from app.database.repository import save_data,all_read_data
 import joblib
 import sys
+import numpy as np
 
 
 def main():
@@ -57,16 +58,16 @@ def main():
             file_name = input("-> ")
             print(f"入力されたファイル: {file_name}")
 
-            file_title,own_eq,file_path=get_file_info(file_name)
+            file_path=test_file_info(file_name)
             test_features = AudioAnalyzer(file_path)
 
 
             loaded_model = joblib.load(rf".\model\learn-model.joblib")
             print("モデルを読み込みました")
 
-            predictions = loaded_model.predict(test_features)
-            #analyzer.pyから引っ張ってくる。(new_data)
-            print("予測結果: ",predictions)
+            predictions = loaded_model.predict(np.asarray(test_features).reshape(1, -1))
+            final_features = np.rint(predictions).astype(int)
+            print("予測結果: ",final_features)
 
 
 
