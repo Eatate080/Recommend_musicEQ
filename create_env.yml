@@ -12,3 +12,5 @@ dependencies:
   - scikit-learn=1.2.2
   - setuptools<70.0.0
   - supabase = 2.30.0
+  - fastapi = 0.136.1
+  - uvicorn = 0.47.0

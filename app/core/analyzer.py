@@ -2,11 +2,17 @@
 import numpy as np
 import librosa
 import sys
+import io
 
 
 
 def AudioAnalyzer(file_path) :
     try:
+
+        if isinstance(file_path, bytes):
+
+            file_path = io.BytesIO(file_path)
+
         y, sr = librosa.load(file_path,sr=None) #yがオーディオの時系列データ(サンプル数,)、srがサンプリングレート(None=自動)
 
         mel_spectrogram = librosa.feature.melspectrogram(y=y,sr=sr) #人間の可聴領域に合わせる
