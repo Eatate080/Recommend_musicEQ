@@ -7,3 +7,6 @@
 *.wma
 *.aac
 *.env
+
+!data/
+!data/**
