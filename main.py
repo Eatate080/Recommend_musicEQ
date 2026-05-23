@@ -32,7 +32,7 @@ def main():
             print(f"入力されたファイル: {file_name}")
 
             file_title,own_eq,file_path=get_file_info(file_name)
-            features = AudioAnalyzer(file_path)
+            features = AudioAnalyzer(file_path)[0]
             save_data(file_title,features,own_eq)
         
             print("\nこのまま学習させますか？")
@@ -65,9 +65,10 @@ def main():
             loaded_model = joblib.load(rf".\model\learn-model.joblib")
             print("モデルを読み込みました")
 
-            predictions = loaded_model.predict(np.asarray(test_features).reshape(1, -1))
+            predictions = loaded_model.predict(test_features)
             final_features = np.rint(predictions).astype(int)
             print("予測結果: ",final_features)
+            sys.exit()
 
 
 
