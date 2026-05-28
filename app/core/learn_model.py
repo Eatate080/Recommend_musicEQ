@@ -1,6 +1,5 @@
 from sklearn.ensemble  import RandomForestRegressor as RFR
 import joblib
-import numpy as np
 import pathlib 
 
 
