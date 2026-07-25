@@ -8,3 +8,6 @@
 *.aac
 *.env
 
+**/__pycache__/
+.vscode/
+.env
